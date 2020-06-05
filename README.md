@@ -2,7 +2,7 @@
 
 **General Assembly | Data Science Immersive | Capstone Project**
 
-<img src="images/Screenshot 2020-06-05 at 11.12.01">
+<img src="images/Screenshot 2020-06-05 at 11.12.01.png">
 
 
 general discription
