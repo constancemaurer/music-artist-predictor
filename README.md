@@ -55,8 +55,8 @@ Can we predict a music artist by his/her songs' spotify music features, populari
 ## Data Collection
 
 Data was collected from [Spotify Track Dataset](https://www.kaggle.com/zaheenhamidani/ultimate-spotify-tracks-db) from Kaggle and from Genius Lyrics website using the lyricsgenius wrapper by johnwmillr (link) utlising Genius APIs and BeautifulSoup webscraping.
- 
-Variable | Description | Data Type | Location
+
+<sup>Variable | Description | Data Type | Location
 --- | --- | --- | ---
 genre | The music genre of the song. | string object | {spotify_track,genius_lyrics}
 artist_name | The artist or band name of the song. | string object | {spotify_track,genius_lyrics}
@@ -78,8 +78,8 @@ time_signature | An estimated overall time signature of a track. The time signat
 valence | A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry). | float 64 | {spotify_track}
 release_year | The date the track/song was released. | string object - has to be changed to datetime | {genius_lyrics}
 spotify_uri | Genius' record of spotify uri for a track. | string object | {genius_lyrics}
-lyrics | Web scrapped lyrics from genius.com website. | string object | {genius_lyrics} 
-
+lyrics | Web scrapped lyrics from genius.com website. | string object | {genius_lyrics} </sup>
+ 
 ## Data Preparation/Cleaning/Wrangling
 
 * blaa
