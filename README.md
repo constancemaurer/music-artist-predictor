@@ -2,7 +2,7 @@
 
 **General Assembly | Data Science Immersive | Capstone Project**
 
-<img src="images/Screenshot 2020-06-05 at 10.38.16.png">
+<img src="images/Screenshot 2020-06-05 at 11.12.01">
 
 
 general discription
@@ -17,7 +17,7 @@ Can we predict a music artist by his/her songs' spotify music features, populari
 2.
 
 
-## Methodology 
+## Methodology
 
 1. Select artists from a Spotify Dataset published on Kaggle.
 
