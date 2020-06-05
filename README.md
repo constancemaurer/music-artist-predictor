@@ -49,14 +49,31 @@ Can we predict a music artist by his/her songs' spotify music features, populari
 
 15. Findings and Limitations
 
+## Python Libraries
+
 
 ## Data Collection
 
-
-
+Data was collected from Spotify Track Dataset from Kaggle (link) and from Genius Lyrics website using the lyricsgenius wrapper by johnwmillr
+ (link).
+ 
+ feature table
+ 
+ 
 ## Data Preparation/Cleaning/Wrangling
 
 ## Model Selection
+
+First only four models (KNN, Logistic Regression, Random Forest, and Support Vector Machines) were tested with a GridsearchCV using only a few parameters per model on the engineered features and the lyrics processed with either scikit-learn's CountVectorizer or TfidfVectorizer.
+
+It was found that the ...Vectorizer seemed to yield better Cross Validation Scores.
+
+Table of tfidf and cvec from first testing.
+
+
+Following a thourough GridSearchCV Procedure with multiple classification models (see Table below), it was found that Random Forest was performing the best out of the 16 models.
+
+Big model table---
 
 ## Model Optimisation & Evaluation
 
