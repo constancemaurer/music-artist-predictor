@@ -82,7 +82,22 @@ lyrics | Web scrapped lyrics from genius.com website. | string object | {genius_
 
 ## Data Preparation/Cleaning/Wrangling
 
+* blaa
+
+* blaa
+
 ## Model Selection
+
+**Baseline:** 0.058
+
+* Modeling was performed on previously engineered features and lyrics, which were processed either through the use of scikit-learn's CountVectorizer (CountV), taking word counts, or TfidfVectorizer (TfidfV), where rare words are weighted more than common words.
+
+* For both, CountV and TfidfV, a corpus of 1000 features and n grams with a range of 1 to 3 was created. Stop words were removed, but words were not stemmed and lemmatised, due to the use of slang.
+
+* Engineered features and CountV matrices or Tfidfv matrices were standarized using scikit-learn's StandardScaler().
+
+* Modeling on PCA data was performed but had low scores and was therefore excluded from the testing process. 
+
 
 ### Preliminary Model Testing
 
@@ -106,17 +121,21 @@ First only four models (KNN, Logistic Regression, Random Forest, and Support Vec
 
 **Preliminary findings**
 
-* Model testing on the <ins>features and CountVectorized lyrics</ins> indicated Logistic Regression and Random Forest Models yielded high cross validation scores of 0.302 and 0.433 respectively.
+* Model testing on the features and <ins>CountVectorized lyrics</ins> indicated Logistic Regression and Random Forest models yielded high cross validation scores of 0.302 and 0.433, respectively. 
 
-* Model testing on the <ins>features and TfidfVectorized lyrics</ins> Logistic Regression and Random Forest Models yielded high cross validation scores of 0.399 and 0.398 respectively.
+* Model testing on the <ins>features and TfidfVectorized lyrics</ins> indicated Logistic Regression and Random Forest models yielded high cross validation scores of 0.399 and 0.398, respectively.
 
+It was decided to proceed mainly with the TfidfV dataset.
 
 ### Large Scale Model Testing
 
-Following a thourough GridSearchCV Procedure with multiple classification models (see Table below), it was found that Random Forest was performing the best out of the 16 models.
 
 
-## Model Optimisation & Evaluation
+Following a thourough GridSearchCV Procedure with multiple classification models (see Table below), it was found that Random Forest was performing the best out of the <ins>16 models</ins> tested.
+
+MODEL TESTING TABLE
+
+## Model Optimisation
 
 ## Results
 
