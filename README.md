@@ -2,6 +2,9 @@
 
 **General Assembly | Data Science Immersive | Capstone Project**
 
+<img src="Screenshot 2020-06-05 at 10.38.16.png" width="100">
+
+
 general discription
 
 ## Problem Statement
