@@ -54,8 +54,7 @@ Can we predict a music artist by his/her songs' spotify music features, populari
 
 ## Data Collection
 
-Data was collected from Spotify Track Dataset from Kaggle (link) and from Genius Lyrics website using the lyricsgenius wrapper by johnwmillr
- (link) utlising Genius APIs and BeautifulSoup webscraping.
+Data was collected from [Spotify Track Dataset](https://www.kaggle.com/zaheenhamidani/ultimate-spotify-tracks-db) from Kaggle and from Genius Lyrics website using the lyricsgenius wrapper by johnwmillr (link) utlising Genius APIs and BeautifulSoup webscraping.
  
  feature table
  
