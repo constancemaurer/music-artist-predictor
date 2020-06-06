@@ -1,4 +1,4 @@
-# music-artist-predictor
+# Music Artist Predictor
 
 **General Assembly | Data Science Immersive | Capstone Project**
 
@@ -56,7 +56,7 @@ Can we predict a music artist by his/her songs' spotify music features, populari
 
 Data was collected from [Spotify Track Dataset](https://www.kaggle.com/zaheenhamidani/ultimate-spotify-tracks-db) from Kaggle and from Genius Lyrics website using the lyricsgenius wrapper by johnwmillr (link) utlising Genius APIs and BeautifulSoup webscraping.
 
-<div class="foo"> 
+
 Variable | Description | Data Type | Location
 --- | --- | --- | ---
 genre | The music genre of the song. | string object | {spotify_track,genius_lyrics}
@@ -81,17 +81,32 @@ release_year | The date the track/song was released. | string object - has to be
 spotify_uri | Genius' record of spotify uri for a track. | string object | {genius_lyrics}
 lyrics | Web scrapped lyrics from genius.com website. | string object | {genius_lyrics} 
  
-</div>
 
-.foo table {
-  width=500
-}  
 
 ## Data Preparation/Cleaning/Wrangling
 
-* blaa
+**Data Cleaning & Processing **
 
-* blaa
+* Removing duplicated entries
+
+* Adjust artist name spellings of the Genius Data to the Spotify spelling
+
+* Removing entries containing a featuring artist with the primary artist 
+
+* Removing artist which aren't part of the target classes
+
+* Lyrics were processed:
+1.
+2.
+3.
+4.
+
+**Features Engineered (excl. any CountVectorizer/TfidfVectorizer corpus)**
+
+<img src="">
+
+
+
 
 ## Model Selection
 
@@ -132,11 +147,11 @@ First only four models (KNN, Logistic Regression, Random Forest, and Support Vec
 
 * Model testing on the <ins>features and TfidfVectorized lyrics</ins> indicated Logistic Regression and Random Forest models yielded high cross validation scores of 0.399 and 0.398, respectively.
 
-It was decided to proceed mainly with the TfidfV dataset.
+
 
 ### Large Scale Model Testing
 
-
+The large-scale model training was performed with TfidfV-engineered lyrics and the other features (see Data Cleaning/Wrangling section).
 
 Following a thourough GridSearchCV Procedure with multiple classification models (see Table below), it was found that Random Forest was performing the best out of the <ins>16 models</ins> tested.
 
@@ -146,7 +161,37 @@ MODEL TESTING TABLE
 
 ## Results
 
+**GridsearchCV: Random Forest**
+
+* Achieved an optimal cross-validation score of X.XXX.
+
+Feature importants based on coefficient absolute number
+
+**Optimization of Random Forest Model:**
+
+* ... increased the cross-valiation score to X.XXX.
+
+* ... 
+
+* ...
+
+**Evaluation:**
+
+* Accuracy score and classification report showed ...
+
+* Precision score ...
+
+* Recall score...
+
+**Limitations:**
+
+* 
+
+* 
+
 ## Analysis
+
+correclation between number of entries per artist and accuracy of the model
 
 ## Further Steps
 
