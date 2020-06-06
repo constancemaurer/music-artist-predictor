@@ -103,7 +103,7 @@ lyrics | Web scrapped lyrics from genius.com website. | string object | {genius_
 
 **Features Engineered (excl. any CountVectorizer/TfidfVectorizer corpus)**
 
-<img src="Screenshot 2020-06-06 at 17.08.22.png", width=50>
+<img src="images/Screenshot 2020-06-06 at 17.08.22.png" width=50>
 
 
 
