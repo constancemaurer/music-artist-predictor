@@ -54,7 +54,7 @@ Can we predict a music artist by his/her songs' spotify music features, populari
 
 ## Data Collection
 
-Data was collected from [Spotify Track Dataset](https://www.kaggle.com/zaheenhamidani/ultimate-spotify-tracks-db) from Kaggle and from Genius Lyrics website using the lyricsgenius wrapper by johnwmillr (https://github.com/johnwmillr/LyricsGenius) utlising Genius APIs and BeautifulSoup webscraping.
+Data was collected from [Spotify Track Dataset](https://www.kaggle.com/zaheenhamidani/ultimate-spotify-tracks-db) from Kaggle and from Genius Lyrics website using the [lyricsgenius](https://github.com/johnwmillr/LyricsGenius) wrapper by johnwmillr utlising Genius APIs and BeautifulSoup webscraping.
 
 
 Variable | Description | Data Type | Location
@@ -112,7 +112,7 @@ or CountVectorization(!) or TfidfVectorization(!!) of the Lyrics data:
 
 * NLP features number of sentences (n_sentences), word count (word_count), character count (character_count), number of syllables (n_syllables), unique word count (unique_word_count), number of long words (n_long_words), number of monosyllable words (n_monosyllable_words) and number of polysyllable words (n_polysyllable_words) were created using the [textacy library](https://chartbeat-labs.github.io/textacy/build/html/index.html)
 
-* Sentiment Analysis and feature creation of vader_compound, vader_pos, vader_neu, vader_neg, objectivity_score and pos_vs_neg was performed using [VaderSentiment libary](https://github.com/cjhutto/vaderSentiment)
+* Sentiment Analysis and feature creation of vader_compound, vader_pos, vader_neu, vader_neg, objectivity_score and pos_vs_neg was performed using [VaderSentiment library](https://github.com/cjhutto/vaderSentiment).
 
 
 
