@@ -54,7 +54,7 @@ Can we predict a music artist by his/her songs' spotify music features, populari
 
 ## Data Collection
 
-Data was collected from [Spotify Track Dataset](https://www.kaggle.com/zaheenhamidani/ultimate-spotify-tracks-db) from Kaggle and from Genius Lyrics website using the lyricsgenius wrapper by johnwmillr (link) utlising Genius APIs and BeautifulSoup webscraping.
+Data was collected from [Spotify Track Dataset](https://www.kaggle.com/zaheenhamidani/ultimate-spotify-tracks-db) from Kaggle and from Genius Lyrics website using the lyricsgenius wrapper by johnwmillr (https://github.com/johnwmillr/LyricsGenius) utlising Genius APIs and BeautifulSoup webscraping.
 
 
 Variable | Description | Data Type | Location
@@ -95,15 +95,28 @@ lyrics | Web scrapped lyrics from genius.com website. | string object | {genius_
 
 * Removing artist which aren't part of the target classes
 
-* Lyrics were processed:
-1.
-2.
-3.
-4.
+* some fo the processing steps involved for feature engineering of the lextical diversity^, textacy stats^^ or sentiment analysis^^^ 
+or CountVectorization(!) or TfidfVectorization(!!) of the Lyrics data:
+
+1. Removing elements such as [Chorus] or [Intro] added by the Lyrics Genius Website - utilising Regex. (all)
+2. Conversion to lowercase - utilising Python (!, !!)
+3. Parsing - performed by *textacy* or CountV/TfidifV (all)
+4. Tokenization - performed by *textacy* or skicit-learn's CountV and TfidfV classes (all)
+5. Lemmatization performed by *lexical diversity* and *Vader* (^,^^^)
+
+
 
 **Features Engineered (excl. any CountVectorizer/TfidfVectorizer corpus)**
 
-<img src="images/Screenshot 2020-06-06 at 17.08.22.png" width=800>
+* Lexical diversity features Token-Type-Ratio (TTR) and Measure of Textual Lexical Diversity (MTLD) were engineered with [lexical diversity library](https://pypi.org/project/lexical-diversity/)
+
+* NLP features number of sentences (n_sentences), word count (word_count), character count (character_count), number of syllables (n_syllables), unique word count (unique_word_count), number of long words (n_long_words), number of monosyllable words (n_monosyllable_words) and number of polysyllable words (n_polysyllable_words) were created using the [textacy library](https://chartbeat-labs.github.io/textacy/build/html/index.html)
+
+* Sentiment Analysis and feature creation of vader_compound, vader_pos, vader_neu, vader_neg, objectivity_score and pos_vs_neg was performed using [VaderSentiment libary](https://github.com/cjhutto/vaderSentiment)
+
+
+
+<img src="images/Screenshot 2020-06-06 at 17.28.28.png" width=800>
 
 
 
