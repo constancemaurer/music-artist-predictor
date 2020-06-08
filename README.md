@@ -108,18 +108,18 @@ lyrics | Web scrapped lyrics from genius.com website. | string object | {genius_
 
 * Removing artist which aren't part of the target classes
 
-* some fo the processing steps involved for feature engineering of the lextical diversity^, textacy stats^^ or sentiment analysis^^^ 
+* Some of the processing steps involved for feature engineering of the lextical diversity^, textacy stats^^ or sentiment analysis^^^ 
 or CountVectorization(!) or TfidfVectorization(!!) of the Lyrics data:
 
-     1. Removing elements such as [Chorus] or [Intro] added by the Lyrics Genius Website - utilising Regex. (all)
+    1. Removing elements such as [Chorus] or [Intro] added by the Lyrics Genius Website - utilising Regex. (all)
 
-     2. Conversion to lowercase - utilising Python (!, !!)
+    2. Conversion to lowercase - utilising Python (!, !!)
 
-     3. Parsing - performed by *textacy* or CountV/TfidifV (all)
+    3. Parsing - performed by *textacy* or CountV/TfidifV (all)
 
-     4. Tokenization - performed by *textacy* or skicit-learn's CountV and TfidfV classes (all)
+    4. Tokenization - performed by *textacy* or skicit-learn's CountV and TfidfV classes (all)
 
-     5. Lemmatization performed by *lexical diversity* and *Vader* (^,^^^)
+    5. Lemmatization performed by *lexical diversity* and *Vader* (^,^^^)
 
 ***
 
@@ -133,7 +133,7 @@ or CountVectorization(!) or TfidfVectorization(!!) of the Lyrics data:
 
 
 
-<img src="images/Screenshot 2020-06-06 at 17.28.28.png" width=800>
+<img src="images/Screenshot 2020-06-06 at 17.28.28.png" width=600>
 
 
 ## Exploratory Data Analysis
@@ -229,23 +229,37 @@ Following a thourough GridSearchCV Procedure with multiple classification models
 
 ## Model Optimisation
 
-blaaaaaa
+* Original CV score: 0.433
+* Ran each optimisation step with another Gridsearch in case the preferences shifted.
+
+1. Changed class weight to balanced -  CV score: 
+2. Cut down on features by choosing the first 750 most important features - CV score: X.XXX
+3. Increased the model data from 1312 rows to 1626 rows (baseline: 0.0724, balanced class weight, and reduced features to top 200) - CV score: 0.508
+
+**Random Forest Classifier**
+
+Pros
+* Decorrelates trees (relative to bagged trees), which is especially useful when there is a lot of correlation
+* Reduced variance in comparison to regular decision tree
+* Has the ability to address class imbalance by using the balanced class weight flag
+* Scales to large datasets
+
+Cons
+* Not as easy to visually interpret
+* Long computation time when used in GridSearch
+* Tends to overfit on the training data but is claimed to not be susceptible to that
 
 ## Results
 
 **GridsearchCV: Random Forest**
 
-* Achieved an optimal cross-validation score of X.XXX.
+* Achieved an optimal cross-validation score of 0.433.
 
-Feature importants based on coefficient absolute number
+* Feature importance, based on coefficient absolute number, showed that popularity, loudness, duration_ms, acousticness, unique_word_count, energy etc.
 
 **Optimization of Random Forest Model:**
 
-* ... increased the cross-valiation score to X.XXX.
-
-* ... 
-
-* ...
+* Achieved optimal cross-validation score of **0.508**.
 
 **Evaluation:**
 
@@ -255,16 +269,28 @@ Feature importants based on coefficient absolute number
 
 * Recall score...
 
+* Classes with a higher representation achieve higher accuracy, precision and recall scores. This is a strong indication that the model has a bias
+
 **Limitations:**
 
-* 
+* Kaggle dataset with choices of songs per artists + possibility to scrap all
+* Small dataset
+* Some artists have few songs
+* Can only be applied to trained artists not unseen artist
+* Slight class imbalance favoured majority class predictions
 
-* 
+* Risk: Overfitting on training data
 
 ## Analysis
 
 correclation between number of entries per artist and accuracy of the model
 
 ## Future Steps
+
+* Improve model with lowering the threshold
+* ROC curves
+* Model with the NLP and numeric features separately and later join them together
+* Collect more data to increase statistical significance, enrich dataset and produce a stronger model
+* Perform statistical testing on features before modeling
 
 ## Conclusion
