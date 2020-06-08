@@ -51,7 +51,7 @@ Can we predict a music artist by his/her songs' spotify music features, populari
 
 ## Python Libraries
 
-[Pandas](https://pandas.pydata.org/), [Numpy](https://numpy.org/), [scikit-learn](https://scikit-learn.org/stable/), [textacy](https://chartbeat-labs.github.io/textacy/build/html/index.html), [lexical diversity](https://pypi.org/project/lexical-diversity/), [VaderSentiment],[Matplotlib](https://matplotlib.org/), [Seaborn](https://seaborn.pydata.org/), [Postgres](https://postgresapp.com/), [Regex(re)](https://docs.python.org/3/library/re.html#module-re)
+[Pandas](https://pandas.pydata.org/), [Numpy](https://numpy.org/), [scikit-learn](https://scikit-learn.org/stable/), [textacy](https://chartbeat-labs.github.io/textacy/build/html/index.html), [lexical diversity](https://pypi.org/project/lexical-diversity/), [VaderSentiment](https://github.com/Holek/vader_sentiment), [Matplotlib](https://matplotlib.org/), [Seaborn](https://seaborn.pydata.org/), [Postgres](https://postgresapp.com/), [Regex(re)](https://docs.python.org/3/library/re.html#module-re)
 
 ## Data Collection
 
@@ -100,9 +100,13 @@ lyrics | Web scrapped lyrics from genius.com website. | string object | {genius_
 or CountVectorization(!) or TfidfVectorization(!!) of the Lyrics data:
 
 1. Removing elements such as [Chorus] or [Intro] added by the Lyrics Genius Website - utilising Regex. (all)
+
 2. Conversion to lowercase - utilising Python (!, !!)
+
 3. Parsing - performed by *textacy* or CountV/TfidifV (all)
+
 4. Tokenization - performed by *textacy* or skicit-learn's CountV and TfidfV classes (all)
+
 5. Lemmatization performed by *lexical diversity* and *Vader* (^,^^^)
 
 
