@@ -7,6 +7,11 @@
 ***
 general discription
 
+## Table of Contents
+
+* [Problem Statement](## Problem Statement)
+* [Methodology](
+
 ## Problem Statement
 
 Can we predict a music artist by his/her songs' spotify music features, popularity score and lyrics?
