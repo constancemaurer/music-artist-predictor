@@ -5,7 +5,8 @@
 <img src="images/Screenshot 2020-06-05 at 11.12.01.png">
 
 ***
-general discription
+
+ML model that is able to predict the music artist of a track based on the song's Spotify music features and Genius lyrics.
 
 ## Table of Contents
 
