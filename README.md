@@ -18,7 +18,7 @@ ML model that is able to predict the music artist of a track based on the song's
 * [Data Preparation](##Data-Preparation)
 * [Exploratory Data Analysis](##Exploratory-Data-Analysis)
 * [Model Selection](##Model-Selection)
-* [Model Optimisation](##Model-Optimisation)
+* [Model Optimisation](#Model-Optimisation)
 * [Results](##Results)
 * [Analysis](##Analysis)
 * [Further Steps](##Further-Steps)
