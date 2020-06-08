@@ -9,7 +9,7 @@ general discription
 
 ## Table of Contents
 
-* [Problem Statement](##Problem Statement)
+* [Problem Statement](##Problem-Statement)
 * [Goals](##Goals)
 * [Methodology](##Methodolgy)
 * [Python Libraries](##Python Libraries)
