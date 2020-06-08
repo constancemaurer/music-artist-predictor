@@ -29,17 +29,16 @@ Can we predict a music artist by his/her songs' spotify music features, populari
 
 ## Goals
 
-1.
-2.
-
+1. Create a multinominal classification model that is able to predict the music artist by the artists' songs given the songs' spotify audio features and lyrics of the song.
+2. Evaluate the model by testing it on unseen data and producing classification report, confusion matrix, ROC curve and other evaluation metrics.
 
 ## Methodology
 
 1. Select artists from a Spotify Dataset published on Kaggle.
 
-2. Retrieve lyrics from artists' songs through Genius API and webscrapping with BeautifulSoup. Alternatively with a Python API wrapper called lyricsgenius by johnwmillr.
+2. Retrieve lyrics from artists' songs through Genius API wrapper called lyricsgenius by johnwmillr.
 
-3. Establish SQL database
+3. Establish SQL database.
 
 4. Merge datasets.
 
@@ -49,21 +48,17 @@ Can we predict a music artist by his/her songs' spotify music features, populari
 
 7. Prepare training and testing set.
 
-8. Prepare count and TF-IDF vectorised features.
+8. Prepare Count- and Tfidf-vectorised features.
 
 9. Perform standarisation.
 
-10. *Perform Principal Component Analysis to establish feature importance and reduce the number of features.*
+10. Select a model by testing different classifiers.
 
-11. *STATSMODELS?*
+11. Optimise model.
 
-12. *Cluster Analysis*
+12. Evaluate model with Accuracy, Precision and Recall.
 
-13. Model Selection by testing different Classifiers.
-
-14. Model Optimisation and Evaluation with Accuracy, Precision and Recall.
-
-15. Findings and Limitations
+12. Outline results, limitations and future steps.
 
 ## Python Libraries
 
@@ -115,17 +110,17 @@ lyrics | Web scrapped lyrics from genius.com website. | string object | {genius_
 * some fo the processing steps involved for feature engineering of the lextical diversity^, textacy stats^^ or sentiment analysis^^^ 
 or CountVectorization(!) or TfidfVectorization(!!) of the Lyrics data:
 
-1. Removing elements such as [Chorus] or [Intro] added by the Lyrics Genius Website - utilising Regex. (all)
+     1. Removing elements such as [Chorus] or [Intro] added by the Lyrics Genius Website - utilising Regex. (all)
 
-2. Conversion to lowercase - utilising Python (!, !!)
+     2. Conversion to lowercase - utilising Python (!, !!)
 
-3. Parsing - performed by *textacy* or CountV/TfidifV (all)
+     3. Parsing - performed by *textacy* or CountV/TfidifV (all)
 
-4. Tokenization - performed by *textacy* or skicit-learn's CountV and TfidfV classes (all)
+     4. Tokenization - performed by *textacy* or skicit-learn's CountV and TfidfV classes (all)
 
-5. Lemmatization performed by *lexical diversity* and *Vader* (^,^^^)
+     5. Lemmatization performed by *lexical diversity* and *Vader* (^,^^^)
 
-
+***
 
 **Features Engineered (excl. any CountVectorizer/TfidfVectorizer corpus)**
 
@@ -161,6 +156,8 @@ Please refer to the Exploratory Data Analysis Notebook and my Public Tableau Pro
 *vader compound vs valence*
 
 *Adele vs Kendrick Lamar*
+
+
 
 ## Model Selection
 
@@ -267,6 +264,6 @@ Feature importants based on coefficient absolute number
 
 correclation between number of entries per artist and accuracy of the model
 
-## Further Steps
+## Future Steps
 
 ## Conclusion
