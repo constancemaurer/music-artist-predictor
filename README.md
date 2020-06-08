@@ -4,7 +4,7 @@
 
 <img src="images/Screenshot 2020-06-05 at 11.12.01.png">
 
-
+***
 general discription
 
 ## Problem Statement
@@ -51,6 +51,7 @@ Can we predict a music artist by his/her songs' spotify music features, populari
 
 ## Python Libraries
 
+[Pandas](https://pandas.pydata.org/), [Numpy](https://numpy.org/), [scikit-learn](https://scikit-learn.org/stable/), [textacy](https://chartbeat-labs.github.io/textacy/build/html/index.html), [lexical diversity](https://pypi.org/project/lexical-diversity/), [VaderSentiment],[Matplotlib](https://matplotlib.org/), [Seaborn](https://seaborn.pydata.org/), [Postgres](https://postgresapp.com/), [Regex(re)](https://docs.python.org/3/library/re.html#module-re)
 
 ## Data Collection
 
@@ -83,9 +84,9 @@ lyrics | Web scrapped lyrics from genius.com website. | string object | {genius_
  
 
 
-## Data Preparation/Cleaning/Wrangling
+## Data Preparation
 
-**Data Cleaning & Processing **
+**Data Cleaning & Processing**
 
 * Removing duplicated entries
 
@@ -127,9 +128,9 @@ or CountVectorization(!) or TfidfVectorization(!!) of the Lyrics data:
 
 * Modeling was performed on previously engineered features and lyrics, which were processed either through the use of scikit-learn's CountVectorizer (CountV), taking word counts, or TfidfVectorizer (TfidfV), where rare words are weighted more than common words.
 
-* For both, CountV and TfidfV, a corpus of 1000 features and n grams with a range of 1 to 3 was created. Stop words were removed, but words were not stemmed and lemmatised, due to the use of slang.
+* For both, CountV and TfidfV, a corpus of 1000 features and n grams with a range of 1 to 3 was created. Stop words were removed, but words were not stemmed and lemmatised, due to the use of slang in many tracks.
 
-* Engineered features and CountV matrices or Tfidfv matrices were standarized using scikit-learn's StandardScaler().
+* Engineered features and CountV/TfidfV matrices were standarized using scikit-learn's StandardScaler() class.
 
 * Modeling on PCA data was performed but had low scores and was therefore excluded from the testing process. 
 
@@ -158,13 +159,13 @@ First only four models (KNN, Logistic Regression, Random Forest, and Support Vec
 
 * Model testing on the features and <ins>CountVectorized lyrics</ins> indicated Logistic Regression and Random Forest models yielded high cross validation scores of 0.302 and 0.433, respectively. 
 
-* Model testing on the <ins>features and TfidfVectorized lyrics</ins> indicated Logistic Regression and Random Forest models yielded high cross validation scores of 0.399 and 0.398, respectively.
+* Model testing on the features and <ins>TfidfVectorized lyrics</ins> indicated Logistic Regression and Random Forest models yielded high cross validation scores of 0.399 and 0.398, respectively.
 
 
 
 ### Large Scale Model Testing
 
-The large-scale model training was performed with TfidfV-engineered lyrics and the other features (see Data Cleaning/Wrangling section).
+The large-scale model training was performed with TfidfV-engineered lyrics and the other features (see [Data Preparation](##Data Preparation)).
 
 Following a thourough GridSearchCV Procedure with multiple classification models (see Table below), it was found that Random Forest was performing the best out of the <ins>16 models</ins> tested.
 
