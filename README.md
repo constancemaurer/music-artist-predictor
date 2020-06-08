@@ -12,15 +12,15 @@ general discription
 * [Problem Statement](##Problem-Statement)
 * [Goals](##Goals)
 * [Methodology](##Methodolgy)
-* [Python Libraries](##Python Libraries)
-* [Data Collection](##Data Collection)
-* [Data Preparation](##Data Preparation)
-* [Exploratory Data Analysis](##Exploratory Data Analysis)
-* [Model Testing](##Model Testing)
+* [Python Libraries](##Python-Libraries)
+* [Data Collection](##Data-Collection)
+* [Data Preparation](##Data-Preparation)
+* [Exploratory Data Analysis](##Exploratory-Data-Analysis)
+* [Model Testing](##Model-Testing)
 * [Results](##Results)
 * [Analysis](##Analysis)
-* [Further Steps](##Further Steps)
-* [Conclusion](##conclusion)
+* [Further Steps](##Further-Steps)
+* [Conclusion](##Conclusion)
 
 ## Problem Statement
 
@@ -186,7 +186,7 @@ First only four models (KNN, Logistic Regression, Random Forest, and Support Vec
 
 ### Large Scale Model Testing
 
-The large-scale model training was performed with TfidfV-engineered lyrics and the other features (see [Data Preparation](##Data Preparation)).
+The large-scale model training was performed with TfidfV-engineered lyrics and the other features (see [Data Preparation](##Data-Preparation)).
 
 Following a thourough GridSearchCV Procedure with multiple classification models (see Table below), it was found that Random Forest was performing the best out of the <ins>16 models</ins> tested.
 
