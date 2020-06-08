@@ -142,7 +142,25 @@ or CountVectorization(!) or TfidfVectorization(!!) of the Lyrics data:
 
 ## Exploratory Data Analysis
 
-blaaaaaaaaaaaaaaaaa
+Please refer to the Exploratory Data Analysis Notebook and my Public Tableau Profile for further insights. This is a summarised EDA.
+
+### Class imbalance
+
+*bar graph depicting each artist and their class weight in percentage or decimal)*
+
+### Correlation
+
+*Correlation matrix plus small description*
+
+### Sentiment Analysis
+
+*top three negative artists*
+
+*top three positive artists*
+
+*vader compound vs valence*
+
+*Adele vs Kendrick Lamar*
 
 ## Model Selection
 
