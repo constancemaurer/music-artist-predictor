@@ -20,9 +20,7 @@ ML model that is able to predict the music artist of a track based on the song's
 * [Model Selection](#Model-Selection)
 * [Model Optimisation](#Model-Optimisation)
 * [Results](#Results)
-* [Analysis](#Analysis)
 * [Further Steps](#Further-Steps)
-* [Conclusion](#Conclusion)
 
 ## Problem Statement
 
@@ -194,6 +192,7 @@ First only four models (KNN, Logistic Regression, Random Forest, and Support Vec
 |Random Forest       |RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',                        max_depth=50, max_features=10, max_leaf_nodes=None,                        min_impurity_decrease=0.0, min_impurity_split=None,                        min_samples_leaf=1, min_samples_split=2,                        min_weight_fraction_leaf=0.0, n_estimators=500,                        n_jobs=None, oob_score=False, random_state=42, verbose=0,                        warm_start=False)|StandardScaler(), TfidfVectorizer()|1.000                |1.000                  |1.000                |1.000                |0.403                 |0.350                |0.290                |0.269                  |0.398                |
 |Support Vector Machine|SVC(C=0.01, cache_size=200, class_weight=None, coef0=0.0,     decision_function_shape='ovr', degree=3, gamma=0.01, kernel='poly',     max_iter=-1, probability=False, random_state=None, shrinking=True,     tol=0.001, verbose=False)|StandardScaler(), TfidfVectorizer()|0.997                |0.999                  |0.994                |0.996                |0.061                 |0.027                |0.028                |0.008                  |0.063                |
 
+***
 **Preliminary findings**
 
 * Model testing on the features and <ins>CountVectorized lyrics</ins> indicated Logistic Regression and Random Forest models yielded high cross validation scores of 0.302 and 0.433, respectively. 
@@ -260,23 +259,21 @@ Following a thourough GridSearchCV Procedure with multiple classification models
 
 * Macro precision score indicates the ratio of correctly predicted positive observations to the total predicted positive observations. About 54% of the positively predicted artists are correctly predicted.
 
-$\frac{\frac{x}{1}}{x - y}$
-
-
 * Macro Recall/Sensitivity score outlines that 45% of true positive observations were detected as positive. The model misses to detect 55% as true positives.
-
 
 * F1 score, a combination of the precision and recall score, was determined to be 45%. 
 
 * Classes with a higher representation achieve higher accuracy, precision and recall scores. This is a strong indication that the model has a bias
 
-graphs
+<img src="images/1615_rows_precision_recall_f1_vs_trackcount.png">
+
 
 ***
 
 **Limitations:**
 
-* Kaggle dataset with choices of songs per artists + possibility to scrap all
+* Kaggle dataset with choices of songs per artists
+* Genius servers timeout frequently
 * Small dataset
 * Some artists have few songs
 * Can only be applied to trained artists not unseen artist
@@ -299,9 +296,6 @@ Cons
 * Long computation time when used in GridSearch
 * Tends to overfit on the training data but is claimed to not be susceptible to that
 
-## Analysis
-
-correclation between number of entries per artist and accuracy of the model
 
 ## Future Steps
 
@@ -311,4 +305,3 @@ correclation between number of entries per artist and accuracy of the model
 * Collect more data to increase statistical significance, enrich dataset and produce a stronger model
 * Perform statistical testing on features before modeling
 
-## Conclusion
