@@ -260,23 +260,21 @@ Following a thourough GridSearchCV Procedure with multiple classification models
 
 * Macro precision score indicates the ratio of correctly predicted positive observations to the total predicted positive observations. About 54% of the positively predicted artists are correctly predicted.
 
-$\frac{\frac{x}{1}}{x - y}$
-
-
 * Macro Recall/Sensitivity score outlines that 45% of true positive observations were detected as positive. The model misses to detect 55% as true positives.
-
 
 * F1 score, a combination of the precision and recall score, was determined to be 45%. 
 
 * Classes with a higher representation achieve higher accuracy, precision and recall scores. This is a strong indication that the model has a bias
 
-graphs
+<img src="images/1615_rows_precision_recall_f1_vs_trackcount.png" width=600>
+
 
 ***
 
 **Limitations:**
 
-* Kaggle dataset with choices of songs per artists + possibility to scrap all
+* Kaggle dataset with choices of songs per artists
+* Genius servers timeout frequently
 * Small dataset
 * Some artists have few songs
 * Can only be applied to trained artists not unseen artist
