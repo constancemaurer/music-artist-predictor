@@ -234,8 +234,8 @@ Following a thourough GridSearchCV Procedure with multiple classification models
 * Ran each optimisation step with another Gridsearch in case the preferences shifted.
 
 1. Changed class weight to balanced -  CV score: 0.455
-2. Cut down on features by choosing the first 750 most important features - CV score: X.XXX
-3. Enriched the data from 1312 rows to 1626 rows (baseline: 0.0724, balanced class weight, and reduced features to top 200) - CV score: 0.508
+2. Cut down on features by choosing the first 500 most important features - CV score: 0.459
+3. Enriched the data from 1312 rows to 1615 rows (baseline: 0.0724, balanced class weight, and reduced features to top 200) - CV score: 0.508
 
 
 ## Results
@@ -252,9 +252,11 @@ Following a thourough GridSearchCV Procedure with multiple classification models
 
 **Evaluation:**
 
-* Accuracy score and classification report showed ...
+* Macro accuracy score indicates that the model is able to predict the correct class in about 50% of the cases.
 
-* Precision score ...
+* Macro precision (true positive/true positive + false negative) score indicates the ratio of correctly predicted positive observations to the total predicted positive observations. About XX% of the positively predicted artists are correctly predicted.
+
+\frac{\frac{x}{1}}{x - y}
 
 * Recall score...
 
