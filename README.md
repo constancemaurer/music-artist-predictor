@@ -221,6 +221,8 @@ Following a thourough GridSearchCV Procedure with multiple classification models
 
 * Feature importance indicated popularity, loudness, acousticness and unique_word_count (etc.) to have the highest impact on artist prediction.
 
+* It is interesting to note that the order of type of features that influence the class prediction seems to be music features, lexical diversity, text statistics, sentiment and then frequency of specific words.
+
 ***
 
 **Evaluation:**
@@ -241,6 +243,12 @@ Following a thourough GridSearchCV Procedure with multiple classification models
 
 <img src="images/1615_rows_precision_recall_f1_vs_trackcount.png">
 
+
+* **ROC curves showed ...
+
+* Feature importance indicated popularity, loudness, acousticness and unique_word_count (etc.) to have the highest impact on artist prediction.
+
+* It is interesting to note that the order of type of features that influence the class prediction seems to be music features, lexical diversity, text statistics, sentiment and then frequency of specific words.
 
 ***
 
@@ -273,8 +281,6 @@ Cons
 
 ## Future Steps
 
-* Improve model with lowering the threshold
-* ROC curves
 * Model with the NLP and numeric features separately and later join them together
 * Collect more data to increase statistical significance, enrich dataset and produce a stronger model
 * Perform statistical testing on features before modeling
