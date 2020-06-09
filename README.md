@@ -246,9 +246,13 @@ Following a thourough GridSearchCV Procedure with multiple classification models
 
 * Feature importance, based on coefficient absolute number, showed that popularity, loudness, duration_ms, acousticness, unique_word_count, energy etc.
 
+***
+
 **Optimization of Random Forest Model:**
 
 * Achieved optimal cross-validation score of **0.508**.
+
+***
 
 **Evaluation:**
 
@@ -256,11 +260,15 @@ Following a thourough GridSearchCV Procedure with multiple classification models
 
 * Macro precision (true positive/true positive + false negative) score indicates the ratio of correctly predicted positive observations to the total predicted positive observations. About XX% of the positively predicted artists are correctly predicted.
 
-\frac{\frac{x}{1}}{x - y}
+
 
 * Recall score...
 
 * Classes with a higher representation achieve higher accuracy, precision and recall scores. This is a strong indication that the model has a bias
+
+graphs
+
+***
 
 **Limitations:**
 
@@ -271,6 +279,8 @@ Following a thourough GridSearchCV Procedure with multiple classification models
 * Slight class imbalance favoured majority class predictions
 
 * Risk: Overfitting on training data
+
+***
 
 **Random Forest Classifier: Pros and Cons**
 
