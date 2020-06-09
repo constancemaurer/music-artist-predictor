@@ -242,7 +242,7 @@ Following a thourough GridSearchCV Procedure with multiple classification models
 
 **GridsearchCV: Random Forest**
 
-* Achieved an optimal cross-validation score of 0.433.
+* Achieved an optimal cross-validation score of **0.433**.
 
 * Feature importance, based on coefficient absolute number, showed that popularity, loudness, duration_ms, acousticness, unique_word_count, energy etc.
 
@@ -256,13 +256,17 @@ Following a thourough GridSearchCV Procedure with multiple classification models
 
 **Evaluation:**
 
-* Macro accuracy score indicates that the model is able to predict the correct class in about 50% of the cases.
+* Accuracy score indicates that the model is able to predict the correct class in about 50% of the cases.
 
-* Macro precision (true positive/true positive + false negative) score indicates the ratio of correctly predicted positive observations to the total predicted positive observations. About XX% of the positively predicted artists are correctly predicted.
+* Macro precision score indicates the ratio of correctly predicted positive observations to the total predicted positive observations. About 54% of the positively predicted artists are correctly predicted.
+
+$\frac{\frac{x}{1}}{x - y}$
 
 
+* Macro Recall/Sensitivity score outlines that 45% of true positive observations were detected as positive. The model misses to detect 55% as true positives.
 
-* Recall score...
+
+* F1 score, a combination of the precision and recall score, was determined to be 45%. 
 
 * Classes with a higher representation achieve higher accuracy, precision and recall scores. This is a strong indication that the model has a bias
 
