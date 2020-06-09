@@ -194,6 +194,7 @@ First only four models (KNN, Logistic Regression, Random Forest, and Support Vec
 |Random Forest       |RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',                        max_depth=50, max_features=10, max_leaf_nodes=None,                        min_impurity_decrease=0.0, min_impurity_split=None,                        min_samples_leaf=1, min_samples_split=2,                        min_weight_fraction_leaf=0.0, n_estimators=500,                        n_jobs=None, oob_score=False, random_state=42, verbose=0,                        warm_start=False)|StandardScaler(), TfidfVectorizer()|1.000                |1.000                  |1.000                |1.000                |0.403                 |0.350                |0.290                |0.269                  |0.398                |
 |Support Vector Machine|SVC(C=0.01, cache_size=200, class_weight=None, coef0=0.0,     decision_function_shape='ovr', degree=3, gamma=0.01, kernel='poly',     max_iter=-1, probability=False, random_state=None, shrinking=True,     tol=0.001, verbose=False)|StandardScaler(), TfidfVectorizer()|0.997                |0.999                  |0.994                |0.996                |0.061                 |0.027                |0.028                |0.008                  |0.063                |
 
+***
 **Preliminary findings**
 
 * Model testing on the features and <ins>CountVectorized lyrics</ins> indicated Logistic Regression and Random Forest models yielded high cross validation scores of 0.302 and 0.433, respectively. 
@@ -266,7 +267,7 @@ Following a thourough GridSearchCV Procedure with multiple classification models
 
 * Classes with a higher representation achieve higher accuracy, precision and recall scores. This is a strong indication that the model has a bias
 
-<img src="images/1615_rows_precision_recall_f1_vs_trackcount.png" width=600>
+<img src="images/1615_rows_precision_recall_f1_vs_trackcount.png">
 
 
 ***
