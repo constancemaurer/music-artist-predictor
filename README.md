@@ -179,23 +179,8 @@ Please refer to the Exploratory Data Analysis Notebook and my Public Tableau Pro
 
 First only four models (KNN, Logistic Regression, Random Forest, and Support Vector Machines) were tested with a GridsearchCV using only a few parameters per model on the engineered features and the lyrics processed with either scikit-learn's CountVectorizer or TfidfVectorizer.
 
-**CountVectorizer Preliminary Model Test**
-|Model               |Parameters           |Processing           |Train: Accuracy      |Train: Precision       |Train: Recall        |Train: F1            |Test: Accuracy        |Test: Precision      |Test: Recall         |Test: F1               |Cross-Val Score      |
-|--------------------|---------------------|---------------------|---------------------|-----------------------|---------------------|---------------------|----------------------|---------------------|---------------------|-----------------------|---------------------|
-|KNN                 |KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='euclidean',                      metric_params=None, n_jobs=None, n_neighbors=5, p=2,                      weights='distance')|StandardScaler(), CountVectorizer()|1.000                |1.000                  |1.000                |1.000                |0.080                 |0.113                |0.074                |0.057                  |0.066                |
-|Logistic Regression |LogisticRegression(C=7.896522868499725, class_weight=None, dual=False,                    fit_intercept=True, intercept_scaling=1, l1_ratio=None,                    max_iter=100, multi_class='auto', n_jobs=None, penalty='l1',                    random_state=None, solver='saga', tol=0.0001, verbose=0,                    warm_start=False)|StandardScaler(), CountVectorizer()|0.996                |0.998                  |0.994                |0.996                |0.304                 |0.239                |0.232                |0.223                  |0.302                |
-|Random Forest       |RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',                        max_depth=40, max_features=50, max_leaf_nodes=None,                        min_impurity_decrease=0.0, min_impurity_split=None,                        min_samples_leaf=1, min_samples_split=2,                        min_weight_fraction_leaf=0.0, n_estimators=500,                        n_jobs=None, oob_score=False, random_state=42, verbose=0,                        warm_start=False)|StandardScaler(), CountVectorizer()|1.000                |1.000                  |1.000                |1.000                |0.452                 |0.445                |0.360                |0.361                  |0.433                |
-|Support Vector Machine|SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,     decision_function_shape='ovr', degree=3, gamma=0.01, kernel='rbf',     max_iter=-1, probability=False, random_state=None, shrinking=True,     tol=0.001, verbose=False)|StandardScaler(), CountVectorizer()|0.994                |0.998                  |0.991                |0.994                |0.106                 |0.009                |0.055                |0.015                  |0.090                |
-
-**TfidfVectorizer Preliminary Model Test**
-|Model               |Parameters           |Processing           |Train: Accuracy      |Train: Precision       |Train: Recall        |Train: F1            |Test: Accuracy        |Test: Precision      |Test: Recall         |Test: F1               |Cross-Val Score      |
-|--------------------|---------------------|---------------------|---------------------|-----------------------|---------------------|---------------------|----------------------|---------------------|---------------------|-----------------------|---------------------|
-|KNN                 |KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='euclidean',                      metric_params=None, n_jobs=None, n_neighbors=25, p=2,                      weights='distance')|StandardScaler(), TfidfVectorizer()|1.000                |1.000                  |1.000                |1.000                |0.103                 |0.187                |0.077                |0.067                  |0.104                |
-|Logistic Regression |LogisticRegression(C=5.541020330009492, class_weight=None, dual=False,                    fit_intercept=True, intercept_scaling=1, l1_ratio=None,                    max_iter=100, multi_class='auto', n_jobs=None, penalty='l2',                    random_state=None, solver='saga', tol=0.0001, verbose=0,                    warm_start=False)|StandardScaler(), TfidfVectorizer()|1.000                |1.000                  |1.000                |1.000                |0.430                 |0.357                |0.364                |0.343                  |0.399                |
-|Random Forest       |RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',                        max_depth=50, max_features=10, max_leaf_nodes=None,                        min_impurity_decrease=0.0, min_impurity_split=None,                        min_samples_leaf=1, min_samples_split=2,                        min_weight_fraction_leaf=0.0, n_estimators=500,                        n_jobs=None, oob_score=False, random_state=42, verbose=0,                        warm_start=False)|StandardScaler(), TfidfVectorizer()|1.000                |1.000                  |1.000                |1.000                |0.403                 |0.350                |0.290                |0.269                  |0.398                |
-|Support Vector Machine|SVC(C=0.01, cache_size=200, class_weight=None, coef0=0.0,     decision_function_shape='ovr', degree=3, gamma=0.01, kernel='poly',     max_iter=-1, probability=False, random_state=None, shrinking=True,     tol=0.001, verbose=False)|StandardScaler(), TfidfVectorizer()|0.997                |0.999                  |0.994                |0.996                |0.061                 |0.027                |0.028                |0.008                  |0.063                |
-
 ***
+
 **Preliminary findings**
 
 * Model testing on the features and <ins>CountVectorized lyrics</ins> indicated Logistic Regression and Random Forest models yielded high cross validation scores of 0.302 and 0.433, respectively. 
@@ -255,6 +240,8 @@ Following a thourough GridSearchCV Procedure with multiple classification models
 **Optimization of Random Forest Model:**
 
 * Achieved optimal cross-validation score of **0.508**.
+
+* Feature importance indicated popularity, loudness, acousticness and unique_word_count (etc.) to have the highest impact on artist prediction.
 
 ***
 
