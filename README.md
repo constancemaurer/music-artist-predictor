@@ -135,6 +135,9 @@ or CountVectorization(!) or TfidfVectorization(!!) of the Lyrics data:
 <img src="images/Screenshot 2020-06-06 at 17.28.28.png" width=600>
 
 
+*INSERT TABLE OF FEATURE DESCRIPTION INSTEAD**
+
+
 ## Exploratory Data Analysis
 
 Please refer to the Exploratory Data Analysis Notebook and my Public Tableau Profile for further insights. This is a summarised EDA.
@@ -236,6 +239,8 @@ Following a thourough GridSearchCV Procedure with multiple classification models
 2. Cut down on features by choosing the first 500 most important features - CV score: 0.459
 3. Enriched the data from 1312 rows to 1615 rows (baseline: 0.0724, balanced class weight, and reduced features to top 200) - CV score: 0.508
 
+<img src="images/model_optimisation_staircase.png" width=800>
+
 
 ## Results
 
@@ -263,7 +268,11 @@ Following a thourough GridSearchCV Procedure with multiple classification models
 
 * F1 score, a combination of the precision and recall score, was determined to be 45%. 
 
-* Classes with a higher representation achieve higher accuracy, precision and recall scores. This is a strong indication that the model has a bias
+
+*CLASSIFICATION, CONFUSION*
+
+
+* Classes with a higher representation achieve higher accuracy, precision and recall scores. This is a strong indication that the model has a bias.
 
 <img src="images/1615_rows_precision_recall_f1_vs_trackcount.png">
 
