@@ -20,9 +20,7 @@ ML model that is able to predict the music artist of a track based on the song's
 * [Model Selection](#Model-Selection)
 * [Model Optimisation](#Model-Optimisation)
 * [Results](#Results)
-* [Analysis](#Analysis)
 * [Further Steps](#Further-Steps)
-* [Conclusion](#Conclusion)
 
 ## Problem Statement
 
@@ -298,9 +296,6 @@ Cons
 * Long computation time when used in GridSearch
 * Tends to overfit on the training data but is claimed to not be susceptible to that
 
-## Analysis
-
-correclation between number of entries per artist and accuracy of the model
 
 ## Future Steps
 
@@ -310,4 +305,3 @@ correclation between number of entries per artist and accuracy of the model
 * Collect more data to increase statistical significance, enrich dataset and produce a stronger model
 * Perform statistical testing on features before modeling
 
-## Conclusion
