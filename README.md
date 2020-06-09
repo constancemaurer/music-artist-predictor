@@ -267,11 +267,11 @@ Following a thourough GridSearchCV Procedure with multiple classification models
 * Macro Recall/Sensitivity score outlines that 45% of true positive observations were detected as positive. The model misses to detect 55% as true positives.
 
 * F1 score, a combination of the precision and recall score, was determined to be 45%. 
+  
 
+<img src="images/1615rows_classification_report_confusion_m.png">
 
-*CLASSIFICATION, CONFUSION*
-
-
+  
 * Classes with a higher representation achieve higher accuracy, precision and recall scores. This is a strong indication that the model has a bias.
 
 <img src="images/1615_rows_precision_recall_f1_vs_trackcount.png">
