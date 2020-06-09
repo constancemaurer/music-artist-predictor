@@ -10,19 +10,19 @@ ML model that is able to predict the music artist of a track based on the song's
 
 ## Table of Contents
 
-* [Problem Statement](##Problem-Statement)
-* [Goals](##Goals)
-* [Methodology](##Methodolgy)
-* [Python Libraries](##Python-Libraries)
-* [Data Collection](##Data-Collection)
-* [Data Preparation](##Data-Preparation)
-* [Exploratory Data Analysis](##Exploratory-Data-Analysis)
-* [Model Selection](##Model-Selection)
+* [Problem Statement](#Problem-Statement)
+* [Goals](#Goals)
+* [Methodology](#Methodolgy)
+* [Python Libraries](#Python-Libraries)
+* [Data Collection](#Data-Collection)
+* [Data Preparation](#Data-Preparation)
+* [Exploratory Data Analysis](#Exploratory-Data-Analysis)
+* [Model Selection](#Model-Selection)
 * [Model Optimisation](#Model-Optimisation)
-* [Results](##Results)
-* [Analysis](##Analysis)
-* [Further Steps](##Further-Steps)
-* [Conclusion](##Conclusion)
+* [Results](#Results)
+* [Analysis](#Analysis)
+* [Further Steps](#Further-Steps)
+* [Conclusion](#Conclusion)
 
 ## Problem Statement
 
@@ -31,7 +31,8 @@ Can we predict a music artist by his/her songs' spotify music features, populari
 ## Goals
 
 1. Create a multinominal classification model that is able to predict the music artist by the artists' songs given the songs' spotify audio features and lyrics of the song.
-2. Evaluate the model by testing it on unseen data and producing classification report, confusion matrix, ROC curve and other evaluation metrics.
+2. Make predictions about which features mostly affect the identity of music artist. Is his/her style based in the lyrics or the music itself?
+3. Evaluate the model by testing it on unseen data and producing classification report, confusion matrix, ROC curve and other evaluation metrics.
 
 ## Methodology
 
@@ -232,22 +233,10 @@ Following a thourough GridSearchCV Procedure with multiple classification models
 * Original CV score: 0.433
 * Ran each optimisation step with another Gridsearch in case the preferences shifted.
 
-1. Changed class weight to balanced -  CV score: 
+1. Changed class weight to balanced -  CV score: 0.455
 2. Cut down on features by choosing the first 750 most important features - CV score: X.XXX
-3. Increased the model data from 1312 rows to 1626 rows (baseline: 0.0724, balanced class weight, and reduced features to top 200) - CV score: 0.508
+3. Enriched the data from 1312 rows to 1626 rows (baseline: 0.0724, balanced class weight, and reduced features to top 200) - CV score: 0.508
 
-**Random Forest Classifier**
-
-Pros
-* Decorrelates trees (relative to bagged trees), which is especially useful when there is a lot of correlation
-* Reduced variance in comparison to regular decision tree
-* Has the ability to address class imbalance by using the balanced class weight flag
-* Scales to large datasets
-
-Cons
-* Not as easy to visually interpret
-* Long computation time when used in GridSearch
-* Tends to overfit on the training data but is claimed to not be susceptible to that
 
 ## Results
 
@@ -280,6 +269,19 @@ Cons
 * Slight class imbalance favoured majority class predictions
 
 * Risk: Overfitting on training data
+
+**Random Forest Classifier: Pros and Cons**
+
+Pros
+* Decorrelates trees (relative to bagged trees), which is especially useful when there is a lot of correlation
+* Reduced variance in comparison to regular decision tree
+* Has the ability to address class imbalance by using the balanced class weight flag
+* Scales to large datasets
+
+Cons
+* Not as easy to visually interpret
+* Long computation time when used in GridSearch
+* Tends to overfit on the training data but is claimed to not be susceptible to that
 
 ## Analysis
 
