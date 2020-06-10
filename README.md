@@ -139,19 +139,27 @@ Please refer to the Exploratory Data Analysis Notebook and my Public Tableau Pro
 
 ### Class imbalance
 
-*bar graph depicting each artist and their class weight in percentage or decimal)*
+<img src="images/class_balance_tableau.png">
+
+*Description
 
 ### Correlation
 
-*Correlation matrix plus small description*
+<img src="images/correlation_small_data.png" width=800>
+
+*Description*
 
 ### Sentiment Analysis
 
-*top three negative artists*
+<img src="images/senitment_top_bottom.png">
 
-*top three positive artists*
+*Description
 
-*vader compound vs valence*
+<img src="images/vader_vs_valence.png">
+
+*Description
+
+
 
 *Adele vs Kendrick Lamar*
 
