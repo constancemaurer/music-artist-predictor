@@ -252,7 +252,9 @@ Following a thourough GridSearchCV Procedure with multiple classification models
 <img src="images/1615_rows_precision_recall_f1_vs_trackcount.png">
 
 
-* **ROC curves showed ...
+* Evaluating the predictive performance of the random forest model, the ROC curve was plotted for each class and the model's micro and macro ROC curves. Area's under the curves (AUCs) illustrated that the model has a strong ability to distinguish between different classes.
+
+* Precision-recall curves plot the positive predictive value (PPV, y-axis) against the true positive rate (TPR, x-axis). Plotting the micro precision-recall curve of this multiclass model produced a AUC of 0.54. This suggests that the model is only able to have a high recall at a low precision.
 
 * Feature importance indicated popularity, loudness, acousticness and unique_word_count (etc.) to have the highest impact on artist prediction.
 
@@ -266,7 +268,7 @@ Following a thourough GridSearchCV Procedure with multiple classification models
 * Genius servers timeout frequently
 * Small dataset
 * Some artists have few songs
-* Can only be applied to trained artists not unseen artist
+* Can only be applied to trained artists not unseen artists
 * Slight class imbalance favoured majority class predictions
 
 * Risk: Overfitting on training data
@@ -289,7 +291,6 @@ Cons
 
 ## Future Steps
 
-* Model with the NLP and numeric features separately and later join them together
+* Model NLP and numeric features separately and later join them together
 * Collect more data to increase statistical significance, enrich dataset and produce a stronger model
-* Perform statistical testing on features before modeling
-
+* Perform statistical testing on features before modeling, to exclude insignificant features (e.g. with Statsmodel)
