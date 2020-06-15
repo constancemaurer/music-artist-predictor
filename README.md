@@ -141,27 +141,30 @@ Please refer to the Exploratory Data Analysis Notebook and my Public Tableau Pro
 
 <img src="images/class_balance_tableau.png">
 
-*Description
+The dataset on which the original modeling was performed on is a dataset of 1312 rows containing 39 classes (music artists). Their representation in the dataset is here illustrated in percentages. The majority class which determines the baseline of this dataset is The Black Keys. They occupy 5.793% of the dataset which translates to baseline of 0.058. This graph illustrates that there is class imbalance which might influence the predictability of the different classes. (Graph created with Tableau Desktop)
 
 ### Correlation
 
 <img src="images/correlation_small_data.png" width=800>
 
-*Description*
+This correlation matrix illustrates the correlation between all continuous variables in the 1312 rows dataset (Similar pattern has been observed in the 1615 rows dataset). As expected there is a strong correlation between the text statistics and also within the vader sentiment analysis. A high colinearity is therefore expected between those features. It is also intersting to note that there seems to be a slight correlation between some of the music feature variables such as popularity, dancability or duration_ms with some of the text statistics such as word_count or unique_word_count. (Graph created with Tableau Desktop)
 
 ### Sentiment Analysis
 
+
+**VaderSentiment Scores filtered on Mean Vader Compound of each Music Artist**
 <img src="images/senitment_top_bottom.png">
 
-*Description
-
+The two graphs illustrate the most positive and most negative artists based on their vader compound scores of the 1312 rows dataset (filtered on vader_compound). Positive artists usually have higher average vader positive scores than vader negative scores while negative artists usually exibit the vice versa. Vader neutral words are always represented highest in any text as this usually describes non-biased words also such as 'the', 'and' or 'is'. (Graph created with Tableau Desktop)
+  
+**Vader compound in Relation to Spotify's Musical Valence**
 <img src="images/vader_vs_valence.png">
 
-*Description
+Analysing the mean vader compound scores of individual artists with their mean valence scores, it suggests that within positive vader compound artists the musical valence have high scores (mostly above 0.4). The negative vader compound artists have mostly valence scores below 0.5. As Spotify's valence is only measured from 0-1, it is important to note that this data representation is not standardised, which would allow a clearer representation. (Graph created with Tableau Desktop)
 
 
 
-*Adele vs Kendrick Lamar*
+*Please see Exploratory Data Analysis Notebook for full seaborn/matplotlib visualisations.*
 
 
 
