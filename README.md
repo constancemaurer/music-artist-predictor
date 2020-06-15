@@ -64,32 +64,6 @@ Can we predict a music artist by his/her songs' spotify music features, populari
 Data was collected from [Spotify Track Dataset](https://www.kaggle.com/zaheenhamidani/ultimate-spotify-tracks-db) sourced from Kaggle and from Genius Lyrics website using the [lyricsgenius](https://github.com/johnwmillr/LyricsGenius) wrapper by johnwmillr utilising Genius APIs and BeautifulSoup webscraping.
 
 
-Variable | Description | Data Type | Location
---- | --- | --- | ---
-genre | The music genre of the song. | string object | {spotify_track,genius_lyrics}
-artist_name | The artist or band name of the song. | string object | {spotify_track,genius_lyrics}
-track_name | The track name is simply title of the song. | string object | {spotify_track}
-track_id | The spotify ID number which at the time the dataset was collected functioned as the uri but might not match with current uris and IDs. | string object | {spotify_track}
-popularity | Generally speaking, songs that are being played a lot now will have a higher popularity than songs that were played a lot in the past. Duplicate tracks (e.g. the same track from a single and an album) are rated independently. Artist and album popularity is derived mathematically from track popularity. Note that the popularity value may lag actual popularity by a few days: the value is not updated in real time. | int64 | {spotify_track}
-acousticness | A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic. | float64 | {spotify_track}
-danceability | Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable. | float64 | {spotify_track}
-duration_ms | The duration of the track in milliseconds. | int64 | {spotify_track}
-energy | Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy. | float64 | {spotify_track}
-instrumentalness | Predicts whether a track contains no vocals. “Ooh” and “aah” sounds are treated as instrumental in this context. Rap or spoken word tracks are clearly “vocal”. The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content. Values above 0.5 are intended to represent instrumental tracks, but confidence is higher as the value approaches 1.0. | float64 | {spotify_track}
-key | The estimated overall key of the track. Integers map to pitches using standard Pitch Class notation . E.g. 0 = C, 1 = C♯/D♭, 2 = D, and so on. If no key was detected, the value is -1. | string object | {spotify_track}
-liveness | Detects the presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live. A value above 0.8 provides strong likelihood that the track is live. | float64 | {spotify_track}
-loudness | The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typical range between -60 and 0 db. | float64 | {spotify_track}
-mode | Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived. Major is represented by 1 and minor is 0. | string object | {spotify_track}
-speechiness | Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value. Values above 0.66 describe tracks that are probably made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech, either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks. | float64 | {spotify_track}
-tempo | The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration. | float64 | {spotify_track}
-time_signature | An estimated overall time signature of a track. The time signature (meter) is a notational convention to specify how many beats are in each bar (or measure). | string object | {spotify_track}
-valence | A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry). | float 64 | {spotify_track}
-release_year | The date the track/song was released. | string object - has to be changed to datetime | {genius_lyrics}
-spotify_uri | Genius' record of spotify uri for a track. | string object | {genius_lyrics}
-lyrics | Web scrapped lyrics from genius.com website. | string object | {genius_lyrics} 
- 
-
-
 ## Data Preparation
 
 **Data Cleaning & Processing**
@@ -128,9 +102,47 @@ or CountVectorization(!) or TfidfVectorization(!!) of the Lyrics data:
 
 
 <img src="images/Screenshot 2020-06-06 at 17.28.28.png" width=600>
+  
 
-
-*INSERT TABLE OF FEATURE DESCRIPTION INSTEAD**
+Variable | Description | Data Type
+--- | :--- | :--- 
+artist_name | The artist or band name of the song. | string object 
+track_name | The track name is simply title of the song. | string object 
+track_id | The spotify ID number which at the time the dataset was collected functioned as the uri but might not match with current uris and IDs. | string object 
+popularity | Generally speaking, songs that are being played a lot now will have a higher popularity than songs that were played a lot in the past. Duplicate tracks (e.g. the same track from a single and an album) are rated independently. Artist and album popularity is derived mathematically from track popularity. Note that the popularity value may lag actual popularity by a few days: the value is not updated in real time. | int64 
+acousticness | A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic. | float64 
+danceability | Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable. | float64 
+duration_ms | The duration of the track in milliseconds. | int64 
+energy | Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy. | float64 
+instrumentalness | Predicts whether a track contains no vocals. “Ooh” and “aah” sounds are treated as instrumental in this context. Rap or spoken word tracks are clearly “vocal”. The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content. Values above 0.5 are intended to represent instrumental tracks, but confidence is higher as the value approaches 1.0. | float64 
+key | The estimated overall key of the track. Integers map to pitches using standard Pitch Class notation . E.g. 0 = C, 1 = C♯/D♭, 2 = D, and so on. If no key was detected, the value is -1. | string object 
+liveness | Detects the presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live. A value above 0.8 provides strong likelihood that the track is live. | float64 
+loudness | The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typical range between -60 and 0 db. | float64 
+mode | Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived. Major is represented by 1 and minor is 0. | string object 
+speechiness | Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value. Values above 0.66 describe tracks that are probably made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech, either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks. | float64 
+tempo | The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration. | float64 
+time_signature | An estimated overall time signature of a track. The time signature (meter) is a notational convention to specify how many beats are in each bar (or measure). | string object 
+valence | A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry). | float 64 
+release_year | The date the track/song was released. | string object - has to be changed to datetime 
+spotify_uri | Genius' record of spotify uri for a track. | string object 
+lyrics | Web scrapped lyrics from genius.com website. | string object
+lyrics_processed | Lyrics processed for NLP analysis | string object
+n_sentences | Number of sentences in track extracted by textacy. | int64
+word_count | Number of words in track, including numbers + stop words but excluding punctuation extracted by textacy. | int64
+character_count | Character count per track extracted by textacy. | int64
+n_syllables | Number of syllables per track extracted by textacy. | int64
+unique_word_count | Number of unique (lower-cased) words in track extracted by textacy. | int64
+n_long_words | Number of words in track with 7 or more characters extracted by textacy. | int64
+n_monosyllable_words | Number of words in track with 1 syllable only. | int64
+n_polysyllable_words | Number of words in doc with 3 or more syllables extracted by textacy. Note: Since this excludes words with exactly 2 syllables, it’s likely that n_monosyllable_words + n_polysyllable_words != n_words. | int64
+vader_compound | VaderSentiment Library: The compound score is computed by summing the valence scores of each word in the lexicon, adjusted according to the rules, and then normalized to be between -1 (most extreme negative) and +1 (most extreme positive). This is the most useful metric if you want a single unidimensional measure of sentiment for a given sentence. Calling it a 'normalized, weighted composite score' is accurate. | float64
+vader_neg | VaderSentiment Library: compound score >= 0.05. The pos, neu, and neg scores are ratios for proportions of text that fall in each category (so these should all add up to be 1... or close to it with float operation). These are the most useful metrics if you want multidimensional measures of sentiment for a given sentence. | float64
+vader_neu | VaderSentiment Library: (compound score > -0.05) and (compound score < 0.05). The pos, neu, and neg scores are ratios for proportions of text that fall in each category (so these should all add up to be 1... or close to it with float operation). These are the most useful metrics if you want multidimensional measures of sentiment for a given sentence. | float64
+vader_pos | VaderSentiment Library: compound score <= -0.05. The pos, neu, and neg scores are ratios for proportions of text that fall in each category (so these should all add up to be 1... or close to it with float operation). These are the most useful metrics if you want multidimensional measures of sentiment for a given sentence. | float64
+objectivity_score | objectivity = 1. - (vader_pos + vader_neg). | float64
+pos_vs_neg | pos_vs_neg = vader_pos - vader_neg. | float64
+TTR | A type-token ratio (TTR) is the total number of unique words (types) divided by the total number of words (tokens) in a given segment of language. This has been performed the classical way where words have not been lemmatised using lexical diversity library.  | float64
+MTLD | Calculates Measure of Textual Lexical Diversity (MTLD) based on McCarthy and Jarvis (2010) using lexical diversity library. The higher this score is the more complex is the text. | float64
 
 
 ## Exploratory Data Analysis
