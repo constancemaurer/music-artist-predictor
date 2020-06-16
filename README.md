@@ -147,7 +147,7 @@ MTLD | Calculates Measure of Textual Lexical Diversity (MTLD) based on McCarthy 
 
 ## Exploratory Data Analysis
 
-Please refer to the Exploratory Data Analysis Notebook and my Public Tableau Profile for further insights. This is a summarised EDA.
+Please refer to the Exploratory Data Analysis Notebook and my [Public Tableau Profile](https://public.tableau.com/profile/constance.maurer#!/) for further insights. This is a summarised EDA.
 
 ### Class imbalance
 
@@ -176,7 +176,7 @@ Analysing the mean vader compound scores of individual artists with their mean v
 
 
 
-*Please see Exploratory Data Analysis Notebook for full seaborn/matplotlib visualisations.*
+*Please see Exploratory Data Analysis Notebook for full seaborn/matplotlib visualisations or visit my [Tableau Public Profile](https://public.tableau.com/profile/constance.maurer#!/)*
 
 
 
