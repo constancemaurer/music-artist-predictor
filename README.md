@@ -24,7 +24,7 @@ ML model that is able to predict the music artist of a track based on the song's
 
 ## Problem Statement
 
-Can we predict a music artist by his/her songs' spotify music features, popularity score and lyrics?
+Can we predict a music artist by his/her songs' spotify music features and lyrics?
 
 ## Goals
 
